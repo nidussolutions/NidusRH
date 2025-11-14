@@ -44,6 +44,8 @@ export function DialogFormEmployee({
 
         let response;
 
+        console.log(company.id);
+
         if (mode === "create") {
             response = await supabase.from('employees').insert([
                 {
@@ -81,7 +83,6 @@ export function DialogFormEmployee({
     return (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 
-            {/* Botão de abertura */}
             <DialogTrigger asChild>
                 {triggerButton || (
                     <Button className="bg-blue-600 hover:bg-blue-700">
@@ -91,7 +92,6 @@ export function DialogFormEmployee({
                 )}
             </DialogTrigger>
 
-            {/* Conteúdo */}
             <DialogContent className="dark:bg-gray-800 max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle>
